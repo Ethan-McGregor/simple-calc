@@ -7,9 +7,9 @@
 
 import Foundation
 
-var goAgian: Bool = true;
+var goAgain: Bool = true;
 
-while goAgian {
+while goAgain {
     var askAgain: Bool = true
     
     var moreInput: Bool = true
@@ -85,11 +85,11 @@ while goAgian {
     }
     
   
-    print("Would you like to go agian? (y/n)")
+    print("Would you like to go again? (y/n)")
     if(readLine(strippingNewline: true) == "y"){
-        goAgian = true;
+        goAgain = true;
     }else{
-        goAgian = false;
+        goAgain = false;
     }
 }
 
