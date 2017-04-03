@@ -15,7 +15,6 @@ while goAgian {
     var moreInput: Bool = true
     var inputString: [String] = []
     var result = 0
-    var count = 0
     var sum = 0
     
     print("Please enter a number, or expression with elemetns sperated by RETURNS. e.g: \r2\r+\r2\r\r")
@@ -24,16 +23,17 @@ while goAgian {
     
     while moreInput {
         inputString.append(readLine(strippingNewline: true)!)
-        count = inputString.count
-        var symbol = inputString[count - 1]
+         var count = inputString.count
+         var symbol = String(inputString[count - 1])
         if (count == 3) {
+            symbol = String(inputString[count - 2])
             if (symbol == "+" || symbol == "-" || symbol == "*" || symbol == "/" || symbol == "%"){
                 
                 moreInput = false
                 var one = Int(inputString[0])
                 var two = Int(inputString[2])
-                
                 if (inputString[1] == "+"){
+            
                     result = one! + two!
                 } else if (inputString[1] == "-") {
                     result = one! - two!
@@ -46,12 +46,15 @@ while goAgian {
                 }
                 
                 sum = result
+                print("Result: " + String(sum))
+
             }
         }
         
         if (symbol == "count") {
             moreInput = false
             sum = inputString.count - 1
+            print("Result: " + String(sum))
         }
         
         if (symbol == "avg") {
@@ -63,6 +66,7 @@ while goAgian {
             }
             result = add / numinputString
             sum = result
+            print("Result: " + String(sum))
         }
         
         if (symbol == "fact") {
@@ -75,12 +79,12 @@ while goAgian {
                 sum *= numToMult!
                 numToMult = numToMult! - 1
             }
-            
+              print("Result: " + String(sum))
         }
         
     }
     
-    print("Result: " + String(sum))
+  
     print("Would you like to go agian? (y/n)")
     if(readLine(strippingNewline: true) == "y"){
         goAgian = true;
