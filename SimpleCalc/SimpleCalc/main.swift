@@ -17,7 +17,7 @@ while goAgain {
     var result = 0
     var sum = 0
     
-    print("Please enter a number, or expression with elemetns sperated by RETURNS. e.g: \r2\r+\r2\r\r")
+    print("Please enter a number, or expression with elemetns separated by RETURNS. e.g: \r2\r+\r2\r\r")
     
     
     
@@ -28,12 +28,10 @@ while goAgain {
         if (count == 3) {
             symbol = String(inputString[count - 2])
             if (symbol == "+" || symbol == "-" || symbol == "*" || symbol == "/" || symbol == "%"){
-                
                 moreInput = false
                 var one = Int(inputString[0])
                 var two = Int(inputString[2])
                 if (inputString[1] == "+"){
-            
                     result = one! + two!
                 } else if (inputString[1] == "-") {
                     result = one! - two!
@@ -71,8 +69,7 @@ while goAgain {
         
         if (symbol == "fact") {
             moreInput = false
-            var bound = Int(inputString[0])
-            var numToMult = bound
+            var numToMult = Int(inputString[0])
             sum = 1
             
             while (numToMult != 0) {
